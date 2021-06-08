@@ -2914,8 +2914,11 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Audio.Cnds.IsTagPlaying,
 		C3.Plugins.Audio.Acts.Play,
+		C3.Plugins.Text.Cnds.CompareInstanceVar,
+		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Touch.Cnds.OnTouchObject,
 		C3.Plugins.System.Acts.SetVar,
+		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Exps.random,
 		C3.Behaviors.Pin.Acts.PinByProperties,
@@ -2934,16 +2937,16 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		C3.Plugins.Arr.Acts.SetXY,
 		C3.Plugins.Arr.Acts.Delete,
 		C3.Plugins.System.Cnds.Compare,
-		C3.Plugins.Text.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Exps.len,
-		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Exps.left,
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.System.Acts.SubVar,
 		C3.Plugins.System.Cnds.CompareVar,
+		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.Sprite.Cnds.OnAnimFinished,
 		C3.Plugins.System.Cnds.CompareBoolVar,
+		C3.Plugins.System.Cnds.LayerVisible,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.Touch.Exps.X,
 		C3.Plugins.Touch.Exps.Y,
@@ -2952,15 +2955,11 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		C3.Plugins.Sprite.Cnds.OnCreated,
 		C3.Behaviors.MoveTo.Acts.MoveToObject,
 		C3.Plugins.Sprite.Acts.Destroy,
-		C3.Behaviors.MoveTo.Cnds.OnArrived,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Plugins.Arr.Cnds.CompareXY,
 		C3.Plugins.Arr.Cnds.CompareX,
-		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Acts.AddVar,
-		C3.Plugins.System.Acts.RestartLayout,
-		C3.Plugins.System.Cnds.TriggerOnce,
-		C3.Plugins.System.Cnds.LayerVisible
+		C3.Plugins.System.Acts.RestartLayout
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -3119,9 +3118,12 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 	self.C3_ExpressionFuncs = [
 		() => "bgm",
 		() => -10,
-		() => 0,
+		() => "load",
 		() => "",
+		() => 0,
+		() => "Loading...",
 		() => 120,
+		() => 0.1,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => Math.round(f0(2, 8));
